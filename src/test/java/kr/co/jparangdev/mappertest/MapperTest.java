@@ -2,8 +2,6 @@ package kr.co.jparangdev.mappertest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.List;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
@@ -16,11 +14,6 @@ import kr.co.jparangdev.mappertest.entity.CompanyEntity;
 import kr.co.jparangdev.mappertest.model.*;
 
 class MapperTest {
-
-	private static ModelMapper modelMapper;
-	private static CompanyMapstructMapper mapStructMapper;
-	private static Mapper dozerMapper;
-	private static List<Company> companies;
 
 	@BeforeAll
 	static void setMappers() {

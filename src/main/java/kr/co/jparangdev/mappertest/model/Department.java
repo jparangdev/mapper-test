@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.googlecode.jmapper.annotations.JGlobalMap;
-import com.googlecode.jmapper.annotations.JMapConversion;
 
 import kr.co.jparangdev.mappertest.entity.DepartmentEntity;
 import kr.co.jparangdev.mappertest.entity.EmployeeEntity;
@@ -46,10 +45,5 @@ public class Department {
     	}
     	entity.setEmployees(employeeEntities);
     	return entity;
-	}
-
-	@JMapConversion(from={"departmentType"}, to={"departmentType"})
-	public String conversion(DepartmentType departmentType){
-		return departmentType.name();
 	}
 }

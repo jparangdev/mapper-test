@@ -3,7 +3,6 @@ package kr.co.jparangdev.mappertest.model;
 import java.time.LocalDate;
 
 import com.googlecode.jmapper.annotations.JGlobalMap;
-import com.googlecode.jmapper.annotations.JMapConversion;
 
 import kr.co.jparangdev.mappertest.entity.EmployeeEntity;
 import lombok.Getter;
@@ -33,10 +32,5 @@ public class Employee {
     	entity.setSalary(this.salary);
     	entity.setEmployeeType(this.employeeType.name());
     	return entity;
-	}
-
-	@JMapConversion(from={"employeeType"}, to={"employeeType"})
-	public String conversion(EmployeeType employeeType){
-		return employeeType.name();
 	}
 }
