@@ -23,9 +23,7 @@ class MapperTest {
 	void testNormal() {
 		Company company = CompanyTestUtils.createTestCompany();
 		CompanyEntity entity = company.toEntity();
-
 		assertCompany(company, entity);
-
 	}
 
 	@Test
@@ -33,7 +31,6 @@ class MapperTest {
 		ModelMapper modelMapper = new ModelMapper();
 		Company company = CompanyTestUtils.createTestCompany();
 		CompanyEntity entity = modelMapper.map(company, CompanyEntity.class);
-
 		assertCompany(company, entity);
 	}
 
@@ -42,7 +39,6 @@ class MapperTest {
 		CompanyMapstructMapper mapper = CompanyMapstructMapper.INSTANCE;
 		Company company = CompanyTestUtils.createTestCompany();
 		CompanyEntity entity = mapper.convert(company);
-
 		assertCompany(company, entity);
 	}
 
@@ -51,15 +47,12 @@ class MapperTest {
 		Mapper dozerMapper = DozerBeanMapperBuilder.buildDefault();
 		Company company = CompanyTestUtils.createTestCompany();
 		CompanyEntity entity = dozerMapper.map(company, CompanyEntity.class);
-
 		assertCompany(company, entity);
 	}
-
 
 	private static void assertCompany(Company company, CompanyEntity entity) {
 		assertThat(company).usingRecursiveComparison()
 			.ignoringFieldsOfTypes(Department.DepartmentType.class, Employee.EmployeeType.class)
 			.isEqualTo(entity);
 	}
-
 }
